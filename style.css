@@ -1,33 +1,37 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #fff;
+  background: #f5f7fa;
   color: #333;
 }
 nav {
-  background: #0D47A1;
+  background: #2E3B4E;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
+  padding: 15px 40px;
 }
 nav ul {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 20px;
 }
 nav a {
   color: white;
   text-decoration: none;
+  font-weight: bold;
 }
 header {
   text-align: center;
-  padding: 60px 20px;
+  padding: 50px 20px;
+  background: #3F51B5;
+  color: white;
 }
 header img {
-  width: 150px;
+  width: 140px;
   border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   margin-bottom: 20px;
 }
 section {
@@ -37,17 +41,20 @@ section {
 }
 .project {
   margin-bottom: 30px;
+  padding: 15px;
+  background: #e3f2fd;
+  border-radius: 5px;
 }
 #resume {
-  background: #f0f8ff;
+  background: #f0f4ff;
   text-align: center;
 }
 #resume a {
-  color: #0D47A1;
+  color: #1a237e;
   font-weight: bold;
 }
 footer {
-  background: #0D47A1;
+  background: #2E3B4E;
   color: white;
   text-align: center;
   padding: 20px;
