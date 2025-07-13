@@ -86,48 +86,4 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-.project-card a {
-  color: #1a237e;
-  text-decoration: none;
-  font-weight: bold;
-}
-.project-card a:hover {
-  text-decoration: underline;
-}
-
-#resume {
-  background: #f0f4ff;
-  text-align: center;
-}
-#resume a {
-  color: #1a237e;
-  font-weight: bold;
-}
-
-/* Fix for dark mode resume visibility */
-.dark-mode #resume {
-  background-color: #1f1f1f;
-  color: #eee;
-}
-.dark-mode #resume a {
-  color: #90caf9;
-}
-
-/* Dark Mode Global Styles */
-.dark-mode {
-  background-color: #121212;
-  color: #eee;
-}
-.dark-mode nav,
-.dark-mode footer {
-  background-color: #1f1f1f;
-}
-.dark-mode .project-card {
-  background-color: #2c2c2c;
-}
-.dark-mode a {
-  color: #90caf9;
-}
+  transform
