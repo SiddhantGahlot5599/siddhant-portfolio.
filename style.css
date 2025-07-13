@@ -107,38 +107,27 @@ section {
 
 /* Resume */
 #resume {
-  text-align: center;
   padding: 40px 20px;
+  text-align: center;
+  background: transparent;
 }
-
 .resume-box {
-  background: #f0f4ff;
+  background-color: #f0f4ff;
   padding: 20px;
   border-radius: 8px;
-  display: inline-block;
   max-width: 600px;
   margin: auto;
+  display: inline-block;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  color: #333;
+  color: inherit;
 }
-
-#resume a {
+#resume .resume-box a {
   color: #1a237e;
   font-weight: bold;
+  text-decoration: none;
 }
-
-/* 🎯 DARK MODE FIXES */
-.dark-mode #resume {
-  background-color: #121212;
-}
-
-.dark-mode .resume-box {
-  background-color: #1f1f1f;
-  color: #eee;
-}
-
-.dark-mode .resume-box a {
-  color: #90caf9;
+#resume .resume-box a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */
@@ -149,7 +138,7 @@ footer {
   padding: 20px;
 }
 
-/* Dark mode */
+/* Dark mode overrides */
 .dark-mode {
   background-color: #121212;
   color: #eee;
@@ -164,9 +153,7 @@ footer {
 .dark-mode a {
   color: #90caf9;
 }
-.dark-mode .resume-box {
-  background-color: #1f1f1f;
-  color: #eee;
+.dark-mode #resume {
+  background: transparent;
 }
-.dark-mode .resume-box a {
-  color: #90caf9;
+.dark
