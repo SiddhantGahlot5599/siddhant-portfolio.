@@ -21,7 +21,7 @@
   </nav>
 
   <header>
-    <img src="assets/profile2.jpg" alt="Siddhant Gahlot Profile Photo" />
+    <img src="assets/profile.jpg" alt="Siddhant Gahlot Profile Photo" />
     <h2>Hello, I'm Siddhant Gahlot</h2>
     <p class="typewriter"></p>
   </header>
@@ -59,15 +59,15 @@
     </div>
   </section>
 
-<section id="resume">
-  <h3>Resume</h3>
-  <div class="resume-box">
-    <p>
-      You can <a href="assets/resume.pdf" target="_blank">view my resume</a> or 
-      <a href="assets/resume.pdf" download>download it here</a>.
-    </p>
-  </div>
-</section>
+  <section id="resume">
+    <h3>Resume</h3>
+    <div class="resume-box">
+      <p>
+        You can <a href="assets/resume.pdf" target="_blank">view my resume</a> or 
+        <a href="assets/resume.pdf" download>download it here</a>.
+      </p>
+    </div>
+  </section>
 
   <section id="contact">
     <h3>Let's Connect</h3>
@@ -89,10 +89,8 @@
       "CI/CD Automator",
       "Docker & Kubernetes Pro"
     ];
-
     let phraseIndex = 0;
     let letterIndex = 0;
-    let currentText = "";
     let isDeleting = false;
 
     function typeLoop() {
@@ -101,19 +99,17 @@
 
       if (isDeleting) {
         letterIndex--;
-        currentText = phrase.substring(0, letterIndex);
       } else {
         letterIndex++;
-        currentText = phrase.substring(0, letterIndex);
       }
 
-      target.textContent = currentText;
+      target.textContent = phrase.substring(0, letterIndex);
 
       let delay = isDeleting ? 60 : 100;
 
       if (!isDeleting && letterIndex === phrase.length) {
-        delay = 1500;
         isDeleting = true;
+        delay = 1500;
       } else if (isDeleting && letterIndex === 0) {
         isDeleting = false;
         phraseIndex = (phraseIndex + 1) % phrases.length;
