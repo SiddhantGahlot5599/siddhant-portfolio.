@@ -7,10 +7,13 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <button id="toggle-theme">🌙 Toggle Theme</button>
+
   <nav>
     <h1>Siddhant Gahlot</h1>
     <ul>
       <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -18,25 +21,44 @@
   </nav>
 
   <header>
-    <img src="assets/profile2.jpg" alt="Siddhant Gahlot Profile Photo" />
+    <img src="assets/profile.jpg" alt="Siddhant Gahlot Profile Photo" />
     <h2>Hello, I'm Siddhant Gahlot</h2>
-    <p>DevOps Engineer | Automation Enthusiast | Cloud Native Thinker</p>
+    <p class="typewriter"></p>
   </header>
 
   <section id="about">
     <h3>About Me</h3>
-    <p>I'm a DevOps Engineer with a knack for optimizing workflows, automating deployments, and crafting scalable cloud solutions. I thrive on eliminating bottlenecks and turning manual chaos into seamless automation. Whether it's Docker containers, Kubernetes orchestration, or CI/CD pipelines, I love solving infrastructure puzzles!</p>
+    <p>I’m a DevOps Engineer passionate about automating workflows, deploying scalable infrastructure, and empowering teams with modern cloud-native solutions. I love turning chaos into harmony through clean code and seamless pipelines.</p>
+  </section>
+
+  <section id="skills">
+    <h3>Skills</h3>
+    <div class="skills-list">
+      <span>🐳 Docker</span>
+      <span>☸️ Kubernetes</span>
+      <span>⚙️ Jenkins</span>
+      <span>🌍 Terraform</span>
+      <span>🧪 GitHub Actions</span>
+      <span>☁️ AWS</span>
+    </div>
   </section>
 
   <section id="projects">
     <h3>Projects</h3>
-    <div class="project">
-      <h4>⚙️ CI/CD Pipeline Automation</h4>
-      <p>Designed and implemented a robust CI/CD workflow using GitHub Actions, Jenkins, and Docker to enable seamless delivery from commit to production.</p>
-    </div>
-    <div class="project">
-      <h4>☁️ Kubernetes Deployment Toolkit</h4>
-      <p>Created Helm charts and deployment templates for multi-service applications on AWS EKS, streamlining production deployments and updates.</p>
+    <div class="projects-container">
+
+      <div class="project-card">
+        <h4>⚙️ CI/CD Workflow Automation</h4>
+        <p>Built a CI/CD pipeline using GitHub Actions, Jenkins, and Docker to enable seamless delivery from commit to production.</p>
+        <a href="https://github.com/YOUR_USERNAME/cicd-workflow" target="_blank">View on GitHub</a>
+      </div>
+
+      <div class="project-card">
+        <h4>☁️ Kubernetes Microservices Deployment</h4>
+        <p>Deployed containerized microservices on AWS EKS using Helm and Terraform with zero-downtime rolling updates.</p>
+        <a href="https://github.com/YOUR_USERNAME/k8s-microservices" target="_blank">View on GitHub</a>
+      </div>
+
     </div>
   </section>
 
@@ -47,15 +69,49 @@
 
   <section id="contact">
     <h3>Let's Connect</h3>
-    <p>Email: gahlotsid5599@gmail.com</p>
+    <p>Email: siddhant@example.com</p>
     <p>
-      <a href="https://github.com/SiddhantGahlot5599" target="_blank">GitHub</a> |
-      <a href="https://www.linkedin.com/in/siddhant-gahlot-7a2599204/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a> |
+      <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank">LinkedIn</a>
     </p>
   </section>
 
   <footer>
-    <p>© 2025 Siddhant Gahlot. Built with ❤ and DevOps spirit.</p>
+    <p>© 2025 Siddhant Gahlot. Built with ❤ and DevOps magic.</p>
   </footer>
+
+  <script>
+    const phrases = [
+      "DevOps Engineer",
+      "Cloud Native Thinker",
+      "CI/CD Automator",
+      "Docker & Kubernetes Pro"
+    ];
+    let i = 0, j = 0, currentPhrase = [], isDeleting = false;
+    const type = () => {
+      const header = document.querySelector(".typewriter");
+      header.innerHTML = currentPhrase.join("");
+      if (!isDeleting && j < phrases[i].length) {
+        currentPhrase.push(phrases[i][j++]);
+      } else if (isDeleting && j > 0) {
+        currentPhrase.pop();
+        j--;
+      }
+      if (j === phrases[i].length && !isDeleting) {
+        isDeleting = true;
+        setTimeout(type, 1500);
+        return;
+      } else if (j === 0 && isDeleting) {
+        isDeleting = false;
+        i = (i + 1) % phrases.length;
+      }
+      setTimeout(type, isDeleting ? 50 : 100);
+    };
+    document.addEventListener("DOMContentLoaded", type);
+
+    document.getElementById("toggle-theme").onclick = () => {
+      document.body.classList.toggle("dark-mode");
+    };
+  </script>
 </body>
 </html>
