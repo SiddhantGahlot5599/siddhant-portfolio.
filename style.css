@@ -5,7 +5,7 @@ body {
   color: #333;
 }
 
-/* NAVIGATION */
+/* Navigation */
 nav {
   background: #2E3B4E;
   color: white;
@@ -25,16 +25,17 @@ nav a {
   font-weight: bold;
 }
 
-/* TOGGLE BUTTON: Fixed to extreme top-right */
+/* Toggle button pinned to top-right edge */
 #toggle-theme {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 0;
+  right: 0;
+  margin: 10px;
   padding: 8px 12px;
   background: #1a237e;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 0 0 0 10px;
   cursor: pointer;
   z-index: 999;
 }
@@ -42,7 +43,7 @@ nav a {
   background: #3949ab;
 }
 
-/* HEADER */
+/* Header */
 header {
   text-align: center;
   padding: 50px 20px;
@@ -62,14 +63,14 @@ header img {
   overflow: hidden;
 }
 
-/* SECTION STYLES */
+/* Sections */
 section {
   padding: 40px 20px;
   max-width: 800px;
   margin: auto;
 }
 
-/* SKILLS */
+/* Skills */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -78,7 +79,7 @@ section {
   font-size: 1.1em;
 }
 
-/* PROJECTS */
+/* Projects */
 .projects-container {
   display: flex;
   flex-direction: column;
@@ -104,7 +105,7 @@ section {
   text-decoration: underline;
 }
 
-/* RESUME */
+/* Resume */
 #resume {
   text-align: center;
 }
@@ -123,7 +124,7 @@ section {
   font-weight: bold;
 }
 
-/* CONTACT + FOOTER */
+/* Footer */
 footer {
   background: #2E3B4E;
   color: white;
@@ -131,7 +132,7 @@ footer {
   padding: 20px;
 }
 
-/* DARK MODE OVERRIDES */
+/* Dark mode */
 .dark-mode {
   background-color: #121212;
   color: #eee;
@@ -152,4 +153,3 @@ footer {
 }
 .dark-mode .resume-box a {
   color: #90caf9;
-}
