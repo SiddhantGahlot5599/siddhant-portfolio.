@@ -21,7 +21,7 @@
   </nav>
 
   <header>
-    <img src="assets/profile2.jpg" alt="Siddhant Gahlot Profile Photo" />
+    <img src="assets/profile.jpg" alt="Siddhant Gahlot Profile Photo" />
     <h2>Hello, I'm Siddhant Gahlot</h2>
     <p class="typewriter"></p>
   </header>
@@ -61,7 +61,9 @@
 
   <section id="resume">
     <h3>Resume</h3>
-    <p>You can <a href="assets/resume.pdf" target="_blank">view my resume</a> or <a href="assets/resume.pdf" download>download it here</a>.</p>
+    <div class="resume-box">
+      <p>You can <a href="assets/resume.pdf" target="_blank">view my resume</a> or <a href="assets/resume.pdf" download>download it here</a>.</p>
+    </div>
   </section>
 
   <section id="contact">
@@ -84,30 +86,35 @@
       "CI/CD Automator",
       "Docker & Kubernetes Pro"
     ];
-    let i = 0, j = 0, isDeleting = false, currentText = "";
+
+    let phraseIndex = 0;
+    let letterIndex = 0;
+    let currentText = "";
+    let isDeleting = false;
 
     function typeLoop() {
       const target = document.querySelector(".typewriter");
-      const fullText = phrases[i];
-
-      if (!target) return;
+      const phrase = phrases[phraseIndex];
 
       if (isDeleting) {
-        currentText = fullText.substring(0, j--);
+        letterIndex--;
+        currentText = phrase.substring(0, letterIndex);
       } else {
-        currentText = fullText.substring(0, j++);
+        letterIndex++;
+        currentText = phrase.substring(0, letterIndex);
       }
 
       target.textContent = currentText;
 
-      let delay = isDeleting ? 50 : 100;
-      if (!isDeleting && j === fullText.length) {
-        isDeleting = true;
+      let delay = isDeleting ? 60 : 100;
+
+      if (!isDeleting && letterIndex === phrase.length) {
         delay = 1500;
-      } else if (isDeleting && j === 0) {
+        isDeleting = true;
+      } else if (isDeleting && letterIndex === 0) {
         isDeleting = false;
-        i = (i + 1) % phrases.length;
-        delay = 300;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        delay = 500;
       }
 
       setTimeout(typeLoop, delay);
