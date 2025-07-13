@@ -107,22 +107,16 @@ section {
   font-weight: bold;
 }
 
-/* Fix for dark mode on resume */
+/* Fix for dark mode resume visibility */
 .dark-mode #resume {
   background-color: #1f1f1f;
+  color: #eee;
 }
 .dark-mode #resume a {
   color: #90caf9;
 }
 
-footer {
-  background: #2E3B4E;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-/* Dark Mode */
+/* Dark Mode Global Styles */
 .dark-mode {
   background-color: #121212;
   color: #eee;
