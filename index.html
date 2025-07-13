@@ -21,7 +21,7 @@
   </nav>
 
   <header>
-    <img src="assets/profile.jpg" alt="Siddhant Gahlot Profile Photo" />
+    <img src="assets/profile2.jpg" alt="Siddhant Gahlot Profile Photo" />
     <h2>Hello, I'm Siddhant Gahlot</h2>
     <p class="typewriter"></p>
   </header>
@@ -46,19 +46,16 @@
   <section id="projects">
     <h3>Projects</h3>
     <div class="projects-container">
-
       <div class="project-card">
         <h4>⚙️ CI/CD Workflow Automation</h4>
         <p>Built a CI/CD pipeline using GitHub Actions, Jenkins, and Docker to enable seamless delivery from commit to production.</p>
         <a href="https://github.com/YOUR_USERNAME/cicd-workflow" target="_blank">View on GitHub</a>
       </div>
-
       <div class="project-card">
         <h4>☁️ Kubernetes Microservices Deployment</h4>
         <p>Deployed containerized microservices on AWS EKS using Helm and Terraform with zero-downtime rolling updates.</p>
         <a href="https://github.com/YOUR_USERNAME/k8s-microservices" target="_blank">View on GitHub</a>
       </div>
-
     </div>
   </section>
 
@@ -87,33 +84,33 @@
       "CI/CD Automator",
       "Docker & Kubernetes Pro"
     ];
-    let i = 0, j = 0, currentText = "", isDeleting = false;
+    let i = 0, j = 0, isDeleting = false, currentText = "";
 
     function typeLoop() {
       const target = document.querySelector(".typewriter");
-      const phrase = phrases[i];
+      const fullText = phrases[i];
+
       if (!target) return;
 
       if (isDeleting) {
-        currentText = phrase.substring(0, j--);
+        currentText = fullText.substring(0, j--);
       } else {
-        currentText = phrase.substring(0, j++);
+        currentText = fullText.substring(0, j++);
       }
 
       target.textContent = currentText;
 
-      if (!isDeleting && j === phrase.length) {
+      let delay = isDeleting ? 50 : 100;
+      if (!isDeleting && j === fullText.length) {
         isDeleting = true;
-        setTimeout(typeLoop, 1500);
-        return;
+        delay = 1500;
       } else if (isDeleting && j === 0) {
         isDeleting = false;
         i = (i + 1) % phrases.length;
-        setTimeout(typeLoop, 300);
-        return;
+        delay = 300;
       }
 
-      setTimeout(typeLoop, isDeleting ? 50 : 100);
+      setTimeout(typeLoop, delay);
     }
 
     document.addEventListener("DOMContentLoaded", typeLoop);
