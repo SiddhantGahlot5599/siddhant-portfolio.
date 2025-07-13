@@ -21,7 +21,7 @@
   </nav>
 
   <header>
-    <img src="assets/profile2.jpg" alt="Siddhant Gahlot Profile Photo" />
+    <img src="assets/profile.jpg" alt="Siddhant Gahlot Profile Photo" />
     <h2>Hello, I'm Siddhant Gahlot</h2>
     <p class="typewriter"></p>
   </header>
@@ -87,25 +87,22 @@
       "CI/CD Automator",
       "Docker & Kubernetes Pro"
     ];
-    let i = 0;
-    let j = 0;
-    let currentText = "";
-    let isDeleting = false;
+    let i = 0, j = 0, currentText = "", isDeleting = false;
 
     function typeLoop() {
       const target = document.querySelector(".typewriter");
+      const phrase = phrases[i];
       if (!target) return;
-      const currentPhrase = phrases[i];
 
       if (isDeleting) {
-        currentText = currentPhrase.substring(0, j--);
+        currentText = phrase.substring(0, j--);
       } else {
-        currentText = currentPhrase.substring(0, j++);
+        currentText = phrase.substring(0, j++);
       }
 
       target.textContent = currentText;
 
-      if (!isDeleting && j === currentPhrase.length) {
+      if (!isDeleting && j === phrase.length) {
         isDeleting = true;
         setTimeout(typeLoop, 1500);
         return;
